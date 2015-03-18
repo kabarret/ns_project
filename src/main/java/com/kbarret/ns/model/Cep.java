@@ -9,10 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Cep {
 
     private String numero;
-    private String logradouro;
+    private String descricao;
 
     public Cep(String logradouro, String numero) {
-        this.logradouro = logradouro;
+        this.descricao = logradouro;
         this.numero = numero;
     }
 
@@ -24,11 +24,11 @@ public class Cep {
         this.numero = numero;
     }
 
-    public String getLogradouro() {
-        return logradouro;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
