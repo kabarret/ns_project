@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class CepRepository {
 
-    private static Map<String, Cep> ceps;
+    protected static Map<String, Cep> ceps;
 
     static{
         ceps = new HashMap();

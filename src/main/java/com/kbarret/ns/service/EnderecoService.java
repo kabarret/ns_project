@@ -12,14 +12,17 @@ import java.util.List;
 public class EnderecoService {
 
     EnderecoRepository enderecoRepository = new EnderecoRepository();
+    CepService cepService = new CepService();
 
     public Endereco novoEndereco(Endereco endereco) throws Exception {
+        endereco.setCep(cepService.buscaCep(endereco.getCep().getNumero()));
         endereco.validate();
         return enderecoRepository.save(endereco);
     }
 
     public void atualizarEndereco(Endereco endereco) throws Exception {
         buscaEndereco(endereco.getId());
+        endereco.setCep(cepService.buscaCep(endereco.getCep().getNumero()));
         endereco.validate();
         enderecoRepository.update(endereco);
     }
@@ -37,9 +40,9 @@ public class EnderecoService {
         return enderecoRepository.list();
     }
 
-    public void removeEndereco(Endereco endereco) throws Exception {
-        buscaEndereco(endereco.getId());
-        enderecoRepository.remove(endereco.getId());
+    public void removeEndereco(Integer idEndereco) throws Exception {
+        buscaEndereco(idEndereco);
+        enderecoRepository.remove(idEndereco);
     }
 
 }

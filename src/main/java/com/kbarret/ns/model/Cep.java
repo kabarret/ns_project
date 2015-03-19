@@ -11,6 +11,10 @@ public class Cep {
     private String numero;
     private String descricao;
 
+    public Cep() {
+        super();
+    }
+
     public Cep(String logradouro, String numero) {
         this.descricao = logradouro;
         this.numero = numero;

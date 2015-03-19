@@ -1,4 +1,4 @@
-swagger_resteasy_sample
-=======================
+Para rodar utilize o comando maven.
+mvn install jetty:run
 
-Example of how to configure SWAGGER with RESTEasy
+Acesse http://localhost:8080

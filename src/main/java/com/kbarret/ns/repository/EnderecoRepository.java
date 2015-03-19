@@ -4,7 +4,6 @@ import com.kbarret.ns.model.Endereco;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,6 +12,14 @@ import java.util.Map;
 public class EnderecoRepository {
 
     private  static Map<Integer, Endereco> enderecos = new HashMap<>();
+
+    static {
+        enderecos.put(1,new Endereco(1,CepRepository.ceps.get("13000000"), "Note sul" , 233, "Campinas" , "SP", "Taquaral", null));
+        enderecos.put(2,new Endereco(2,CepRepository.ceps.get("01000000"), "Rua verguei" , 120, "São Paulo" , "SP", "Liberdade", null));
+        enderecos.put(3,new Endereco(3,CepRepository.ceps.get("20000000"), "Av Atlantica" , 555, "Rio de Janeiro" , "RJ", "Copacabana", null));
+        enderecos.put(4,new Endereco(4,CepRepository.ceps.get("40000000"), "Av Oceanica" , 233, "Salvado" , "BA", "Centro", null));
+    }
+
 
     public Collection<Endereco> list() {
         return enderecos.values();

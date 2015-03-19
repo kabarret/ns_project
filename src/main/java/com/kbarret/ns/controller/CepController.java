@@ -35,7 +35,7 @@ public class CepController extends BaseWebService {
     @ApiOperation(
             value = "Busca cep informado",
             notes = "Caso o cep não for encontrada retorna o CEP aproximado",
-            responseClass = "java.lang.String")
+            responseClass = "com.kbarret.ns.model.Cep")
     public Response buscaCep(@ApiParam(defaultValue = "01000000", value = "cep para consulta", required = true)  @PathParam("cep") String cep) {
         try {
             Cep cepRetornado = cepService.buscaCep(cep);

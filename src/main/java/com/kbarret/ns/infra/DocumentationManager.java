@@ -1,6 +1,7 @@
 package com.kbarret.ns.infra;
 
 import com.kbarret.ns.controller.CepController;
+import com.kbarret.ns.controller.EnderecoController;
 import com.wordnik.swagger.jaxrs.JaxrsApiReader;
 
 import javax.ws.rs.core.Application;
@@ -15,7 +16,7 @@ public class DocumentationManager extends Application {
     }
 
     private static final Set<Object> singletons = new HashSet<Object>(Arrays.asList(
-            new CepController()));
+            new CepController(), new EnderecoController()));
 
 
     @Override
